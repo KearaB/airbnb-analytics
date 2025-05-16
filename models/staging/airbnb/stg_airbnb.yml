@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_airbnb__calendars
+    description: Staged airbnb calendars data loaded from local data loader.
+    columns:
+      - name: id
+        description: The primary key for stg_airbnb__calendars.
+
+  - name: stg_airbnb__listings
+    description: Staged airbnb listings data loaded from local data loader.
+    columns:
+      - name: id
+        description: The primary key for stg_airbnb__listings.
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_airbnb__neighbourhoods
+    description: Staged airbnb neighbourhoods data loaded from local data loader.
+    columns:
+      - name: id
+        description: The primary key for stg_airbnb__neighbourhoods.
+
+  - name: stg_airbnb__reviews
+    description: Staged airbnb reviews data loaded from local data loader.
+    columns:
+      - name: id
+        description: The primary key for stg_airbnb__reviews.
