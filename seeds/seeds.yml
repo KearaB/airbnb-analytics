@@ -1,0 +1,20 @@
+version: 2
+
+seeds:
+  - name: seed_cities
+    description: Seed file containing details for the unique cities we have Airbnb data on. Each record represents one city used to tag and group datasets across the project.
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - city_name
+          - state
+          - country
+    columns:
+      - name: lookup_value
+        description: A unique identifier for the city, used as a reference key in other models.
+      - name: city_name
+        description: The human-readable name of the city (e.g., Madrid, Milan).
+      - name: state
+        description: The state, province, or administrative region in which the city is located, if applicable.
+      - name: country
+        description: The country in which the city is located.
