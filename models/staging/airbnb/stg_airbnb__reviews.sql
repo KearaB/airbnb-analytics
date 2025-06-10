@@ -1,23 +1,23 @@
-with source_table as 
+with source_table as
 (
-    select * 
+    select *
     from {{ source('airbnb_source', 'reviews') }}
 ),
 
-transformed as 
+transformed as
 (
     select
-        listing_id,
-        id,
-        nullif(trim(date),'') as date,
-        reviewer_id,
+        nullif(trim(listing_id),'') as listing_id,
+        nullif(trim(id),'') as id,
+        date,
+        nullif(trim(reviewer_id),'') as reviewer_id,
         nullif(trim(reviewer_name),'') as reviewer_name,
         nullif(trim(comments),'') as comments,
         nullif(trim(city_name),'') as city_name
-    from 
+    from
         source_table
 )
-select 
-    * 
-from 
+select
+    *
+from
     transformed

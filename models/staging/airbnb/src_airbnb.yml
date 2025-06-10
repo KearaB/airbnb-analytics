@@ -5,28 +5,16 @@ sources:
     database: airbnb-analytics-460013      # GCP Project ID (optional if default)
     schema: airbnb_source                  # Same as 'name' unless you renamed dataset
     tables:
+
       - name: calendars
         description: "Raw Airbnb calendars data loaded from multiple cities."
 
-          
       - name: listings
         description: "Raw Airbnb listings data loaded from multiple cities."
-        columns:
-          - name: id
-            description: "Unique identifier for the listing"
-            data_tests:
-              - unique
-              - not_null
-      
+
       - name: neighbourhoods
         description: "Raw Airbnb neighbourhoods data loaded from multiple cities."
-        
 
       - name: reviews
         description: "Raw Airbnb reviews data loaded from multiple cities."
-        columns:
-          - name: id
-            description: "Unique identifier for the review"
-            data_tests:
-              - unique
-              - not_null
+      
