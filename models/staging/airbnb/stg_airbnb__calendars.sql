@@ -8,13 +8,14 @@ transformed as
 (
     select
         listing_id,
-        nullif(trim(date),'') as date,
-        nullif(trim(available),'') as available,
+        date,
+        available,
         nullif(trim(price),'') as price,
         nullif(trim(adjusted_price),'') as adjusted_price,
         minimum_nights,
         maximum_nights,
-        nullif(trim(city_name),'') as city_name
+        nullif(trim(city_name),'') as city_name,
+        id
     from 
         source_table
 )

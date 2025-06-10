@@ -1,38 +1,38 @@
-with source_table as 
+with source_table as
 (
-    select * 
+    select *
     from {{ source('airbnb_source', 'listings') }}
 ),
 
-transformed as 
+transformed as
 (
     select
-        id,
+        nullif(trim(id),'') as id,
         nullif(trim(listing_url),'') as listing_url,
         scrape_id,
-        nullif(trim(last_scraped),'') as last_scraped,
+        last_scraped,
         nullif(trim(source),'') as source,
         nullif(trim(name),'') as name,
         nullif(trim(description),'') as description,
         nullif(trim(neighborhood_overview),'') as neighborhood_overview,
         nullif(trim(picture_url),'') as picture_url,
-        host_id,
+        nullif(trim(host_id),'') as host_id,
         nullif(trim(host_url),'') as host_url,
         nullif(trim(host_name),'') as host_name,
-        nullif(trim(host_since),'') as host_since,
+        host_since,
         nullif(trim(host_location),'') as host_location,
         nullif(trim(host_about),'') as host_about,
         nullif(trim(host_response_time),'') as host_response_time,
         nullif(trim(host_response_rate),'') as host_response_rate,
         nullif(trim(host_acceptance_rate),'') as host_acceptance_rate,
-        nullif(trim(host_is_superhost),'') as host_is_superhost,
+        host_is_superhost,
         nullif(trim(host_thumbnail_url),'') as host_thumbnail_url,
         nullif(trim(host_picture_url),'') as host_picture_url,
         nullif(trim(host_neighbourhood),'') as host_neighbourhood,
         host_listings_count,
         host_total_listings_count,
         nullif(trim(host_verifications),'') as host_verifications,
-        nullif(trim(host_has_profile_pic),'') as host_has_profile_pic,
+        host_has_profile_pic,
         nullif(trim(host_identity_verified),'') as host_identity_verified,
         nullif(trim(neighbourhood),'') as neighbourhood,
         nullif(trim(neighbourhood_cleansed),'') as neighbourhood_cleansed,
@@ -57,7 +57,7 @@ transformed as
         minimum_nights_avg_ntm,
         maximum_nights_avg_ntm,
         calendar_updated,
-        nullif(trim(has_availability),'') as has_availability,
+        has_availability,
         availability_30,
         availability_60,
         availability_90,
@@ -80,17 +80,17 @@ transformed as
         review_scores_location,
         review_scores_value,
         nullif(trim(license),'') as license,
-        nullif(trim(instant_bookable),'') as instant_bookable,
+        instant_bookable,
         calculated_host_listings_count,
         calculated_host_listings_count_entire_homes,
         calculated_host_listings_count_private_rooms,
         calculated_host_listings_count_shared_rooms,
         reviews_per_month,
         nullif(trim(city_name),'') as city_name
-    from 
+    from
         source_table
 )
-select 
-    * 
-from 
+select
+    *
+from
     transformed
