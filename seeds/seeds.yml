@@ -12,6 +12,12 @@ seeds:
     columns:
       - name: lookup_value
         description: A unique identifier for the city, used as a reference key in other models.
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_airbnb__listings')
+              field: city_name
       - name: city_name
         description: The human-readable name of the city (e.g., Madrid, Milan).
       - name: state
