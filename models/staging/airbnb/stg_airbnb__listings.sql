@@ -20,7 +20,7 @@ transformed as
         nullif(trim(host_url),'') as host_url,
         nullif(trim(host_name),'') as host_name,
         host_since,
-        nullif(trim(host_location),'') as host_location,
+        nullif(replace(trim(host_location), ',', ' |'), '') as host_location,
         nullif(trim(host_about),'') as host_about,
         nullif(trim(host_response_time),'') as host_response_time,
         nullif(trim(host_response_rate),'') as host_response_rate,
