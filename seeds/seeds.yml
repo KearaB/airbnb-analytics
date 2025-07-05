@@ -24,3 +24,21 @@ seeds:
         description: The state, province, or administrative region in which the city is located, if applicable.
       - name: country
         description: The country in which the city is located.
+
+  - name: seed_host_locations
+    description: Seed file containing cleaned location details for our host data, found in listings.
+    columns:
+      - name: lookup_value
+        description: The lookup value used to map back to 'listings.host_location'.
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_airbnb__listings')
+              field: host_location
+      - name: country
+        description:  A cleaed country name found in 'listings.host_location'.
+      - name: state
+        description:  A cleaed state name found in 'listings.host_location' (if applicable.)
+      - name: city
+        description: A cleaed city name found in 'listings.host_location' (if applicable.)

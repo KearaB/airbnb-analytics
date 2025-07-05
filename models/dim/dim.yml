@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_hosts
+    description: "WIP"
+    columns:
+      - name: host_uuid
+        description: "{{ doc('columns__hosts__host_uuid') }}"
+        data_tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "{{ doc('columns__hosts__created_at') }}"
+      - name: name
+        description: "{{ doc('columns__hosts__name') }}"
+      - name: location
+        description: "{{ doc('columns__hosts__location') }}"
+      - name: country
+        description: "{{ doc('columns__hosts__country') }}"
+      - name: state
+        description: "{{ doc('columns__hosts__state') }}"
+      - name: city
+        description: "{{ doc('columns__hosts__city') }}"
+      - name: neighbourhood
+        description: "{{ doc('columns__hosts__neighbourhood') }}"
+      - name: about
+        description: "{{ doc('columns__hosts__about') }}"
+      - name: host_category
+        description: "{{ doc('columns__hosts__host_category') }}"
+      - name: verification_category
+        description: "{{ doc('columns__hosts__verification_category') }}"
+      - name: url
+        description: "{{ doc('columns__hosts__url') }}"
+      - name: picture_url
+        description: "{{ doc('columns__hosts__picture_url') }}"
+      - name: thumbnail_url
+        description: "{{ doc('columns__hosts__thumbnail_url') }}"
+      - name: total_listings_count
+        description: "{{ doc('columns__hosts__total_listings_count') }}"
+      - name: total_verifications_count
+        description: "{{ doc('columns__hosts__total_verifications_count') }}"
+      - name: response_time
+        description: "{{ doc('columns__hosts__response_time') }}"
+      - name: response_rate
+        description: "{{ doc('columns__hosts__response_rate') }}"
+      - name: acceptance_rate
+        description: "{{ doc('columns__hosts__acceptance_rate') }}"
+      - name: is_verified
+        description: "{{ doc('columns__hosts__is_verified') }}"
+      - name: is_superhost
+        description: "{{ doc('columns__hosts__is_superhost') }}"
+      - name: has_profile_pic
+        description: "{{ doc('columns__hosts__has_profile_pic') }}"
+      - name: has_email
+        description: "{{ doc('columns__hosts__has_email') }}"
+      - name: has_phone
+        description: "{{ doc('columns__hosts__has_phone') }}"
+      - name: has_work_email
+        description: "{{ doc('columns__hosts__has_work_email') }}"
+      - name: has_photographer
+        description: "{{ doc('columns__hosts__has_photographer') }}"
