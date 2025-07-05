@@ -1,6 +1,7 @@
 {{
   config(
-    materialized='table'
+    materialized='table',
+    post_hook = set_column_descriptions(model.columns)
   )
 }}
 

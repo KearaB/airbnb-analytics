@@ -3,7 +3,7 @@
 ## ##########################################################
 #-------------------------------------------------
 {% docs columns__hosts__host_uuid %}
-Unique identiifer for each host.
+Unique identifier for each host.
 {% enddocs %}
 #-------------------------------------------------
 
